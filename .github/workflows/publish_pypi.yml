@@ -133,7 +133,6 @@ jobs:
           CIBW_TEST_REQUIRES: pytest
           CIBW_TEST_COMMAND: |
             set -e -x
-#            python -c "import pybamm; print(pybamm.IDAKLUSolver())"
             python -m pytest tests
 
       - name: Upload wheels for Linux
@@ -266,7 +265,6 @@ jobs:
           CIBW_TEST_REQUIRES: pytest
           CIBW_TEST_COMMAND: |
             set -e -x
-#            python -c "import pybamm; print(pybamm.IDAKLUSolver())"
             python -m pytest
 
       - name: Upload wheels for macOS (amd64, arm64)
