@@ -99,6 +99,7 @@ jobs:
           CIBW_TEST_REQUIRES: pytest
           CIBW_TEST_COMMAND: |
             set -e -x
+            pip install pytest-xdist
             python -m pytest {project}
 
       - name: Upload Windows wheels
@@ -135,6 +136,7 @@ jobs:
           CIBW_TEST_REQUIRES: pytest
           CIBW_TEST_COMMAND: |
             set -e -x
+            pip install pytest-xdist
             python -m pytest {project}
 
       - name: Upload wheels for Linux
@@ -267,6 +269,7 @@ jobs:
           CIBW_TEST_REQUIRES: pytest pytest-xdist
           CIBW_TEST_COMMAND: |
             set -e -x
+            pip install pytest-xdist
             python -m pytest {project}
 
       - name: Upload wheels for macOS (amd64, arm64)
