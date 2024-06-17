@@ -85,7 +85,7 @@ jobs:
           CIBW_ARCHS: AMD64
           CIBW_BEFORE_BUILD: python -m pip install setuptools wheel delvewheel # skip CasADi and CMake
           CIBW_REPAIR_WHEEL_COMMAND: delvewheel repair -w {dest_dir} {wheel}
-          CIBW_TEST_COMMAND: python -c "import pybamm; print(pybamm.IDAKLUSolver())"
+          CIBW_TEST_COMMAND: python -c "import pybamm; print(pybamm.IDAKLUSolver()); pytest tests"
 
       - name: Upload Windows wheels
         uses: actions/upload-artifact@v4
@@ -121,6 +121,7 @@ jobs:
           CIBW_TEST_COMMAND: |
             set -e -x
             python -c "import pybamm; print(pybamm.IDAKLUSolver())"
+            python -m pytest tests
 
       - name: Upload wheels for Linux
         uses: actions/upload-artifact@v4
@@ -252,6 +253,7 @@ jobs:
           CIBW_TEST_COMMAND: |
             set -e -x
             python -c "import pybamm; print(pybamm.IDAKLUSolver())"
+            python -m pytest
 
       - name: Upload wheels for macOS (amd64, arm64)
         uses: actions/upload-artifact@v4
