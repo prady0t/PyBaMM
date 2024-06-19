@@ -238,7 +238,8 @@ addopts = [
     "--strict-markers",
 ]
 testpaths = [
-    "docs/source/examples/",
+    "tests",
+#    "docs/source/examples/",
 ]
 console_output_style = "progress"
 xfail_strict = true
