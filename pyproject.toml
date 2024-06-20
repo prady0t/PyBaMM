@@ -230,6 +230,7 @@ minversion = "6"
 required_plugins = [
     "pytest-xdist",
 ]
+norecursedirs = 'pybind11*'
 addopts = [
     "-nauto",
     "-v",
