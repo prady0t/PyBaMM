@@ -7,10 +7,12 @@ import pybamm
 import numpy as np
 import numbers
 import scipy.sparse as sparse
-
+import os
 import importlib
 
+
 idaklu_spec = importlib.util.find_spec("pybamm.solvers.idaklu")
+print(idaklu_spec)
 if idaklu_spec is not None:
     try:
         idaklu = importlib.util.module_from_spec(idaklu_spec)
@@ -21,6 +23,8 @@ if idaklu_spec is not None:
 
 
 def have_idaklu():
+    cwd = os.path.dirname(os.path.realpath(__file__))
+    print(cwd)
     return idaklu_spec is not None
 
 
