@@ -269,7 +269,7 @@ jobs:
           CIBW_TEST_COMMAND: |
             set -e -x
             python -c "import pybamm; print(pybamm.__file__); print(pybamm.IDAKLUSolver())"
-            python -c "import pybamm; pybamm.have_idaklu()"
+            python -c "import pybamm; print(pybamm.have_idaklu())"
 #            python -m pytest {project}
 
       - name: Upload wheels for macOS (amd64, arm64)
