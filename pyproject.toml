@@ -152,7 +152,7 @@ MSMR_Example = "pybamm.input.parameters.lithium_ion.MSMR_example_set:get_paramet
 include-package-data = true
 
 [tool.cibuildwheel]
-test-requires = "pytest, pytest-xdist"
+#test-requires = "pytest, pytest-xdist"
 
 
 # List of files to include as package data. These are mainly the parameter CSV files in
