@@ -270,6 +270,7 @@ jobs:
           CIBW_TEST_COMMAND: |
             set -e -x
             pip install pytest-xdist
+            pip install importlib-metadata
             python -m pytest {project}
 
       - name: Upload wheels for macOS (amd64, arm64)
