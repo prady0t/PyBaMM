@@ -170,6 +170,7 @@ pybamm = [
 ]
 
 [tool.setuptools.packages.find]
+where = ["src"]
 include = ["pybamm", "pybamm.*"]
 
 [tool.ruff]
@@ -239,7 +240,7 @@ addopts = [
     "--strict-markers",
 ]
 testpaths = [
-    "tests",
+    "src",
 #    "docs/source/examples/",
 ]
 console_output_style = "progress"
