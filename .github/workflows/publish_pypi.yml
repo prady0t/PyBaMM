@@ -271,13 +271,13 @@ jobs:
             set -e -x
             python -c "import pybamm; print(pybamm.__file__); print(pybamm.IDAKLUSolver())"
             python -c "import pybamm; print(pybamm.have_idaklu())"
-            pushd {project}/docs
             echo {project}
+            pushd {project}/docs
             ls
-            cd ...
+            ls ../{project}
+            cd ..
+            pwd
             ls
-            popd
-            ls .../{project}
 #            python -m pytest .../{project}
 
       - name: Upload wheels for macOS (amd64, arm64)
