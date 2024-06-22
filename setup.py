@@ -272,7 +272,7 @@ def compile_KLU():
         logger.info("Could not find CMake. Skipping compilation of KLU module.")
 
     pybamm_project_dir = os.path.dirname(os.path.abspath(__file__))
-    pybind11_dir = os.path.join(pybamm_project_dir, "src", "pybind11")
+    pybind11_dir = os.path.join(pybamm_project_dir, "pybind11")
     try:
         open(os.path.join(pybind11_dir, "tools", "pybind11Tools.cmake"))
         logger.info(f"Found pybind11 directory ({pybind11_dir})")
