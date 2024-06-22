@@ -272,7 +272,7 @@ def compile_KLU():
         logger.info("Could not find CMake. Skipping compilation of KLU module.")
 
     pybamm_project_dir = os.path.dirname(os.path.abspath(__file__))
-    pybind11_dir = os.path.join(pybamm_project_dir, "pybind11")
+    pybind11_dir = os.path.join(pybamm_project_dir, "src", "pybind11")
     try:
         open(os.path.join(pybind11_dir, "tools", "pybind11Tools.cmake"))
         logger.info(f"Found pybind11 directory ({pybind11_dir})")
@@ -291,28 +291,28 @@ idaklu_ext = Extension(
     name="pybamm.solvers.idaklu",
     # The sources list should mirror the list in CMakeLists.txt
     sources=[
-        "pybamm/solvers/c_solvers/idaklu/casadi_functions.cpp",
-        "pybamm/solvers/c_solvers/idaklu/casadi_functions.hpp",
-        "pybamm/solvers/c_solvers/idaklu/casadi_solver.cpp",
-        "pybamm/solvers/c_solvers/idaklu/casadi_solver.hpp",
-        "pybamm/solvers/c_solvers/idaklu/CasadiSolver.cpp",
-        "pybamm/solvers/c_solvers/idaklu/CasadiSolver.hpp",
-        "pybamm/solvers/c_solvers/idaklu/CasadiSolverOpenMP.cpp",
-        "pybamm/solvers/c_solvers/idaklu/CasadiSolverOpenMP.hpp",
-        "pybamm/solvers/c_solvers/idaklu/CasadiSolverOpenMP_solvers.cpp",
-        "pybamm/solvers/c_solvers/idaklu/CasadiSolverOpenMP_solvers.hpp",
-        "pybamm/solvers/c_solvers/idaklu/casadi_sundials_functions.cpp",
-        "pybamm/solvers/c_solvers/idaklu/casadi_sundials_functions.hpp",
-        "pybamm/solvers/c_solvers/idaklu/idaklu_jax.cpp",
-        "pybamm/solvers/c_solvers/idaklu/idaklu_jax.hpp",
-        "pybamm/solvers/c_solvers/idaklu/common.hpp",
-        "pybamm/solvers/c_solvers/idaklu/python.hpp",
-        "pybamm/solvers/c_solvers/idaklu/python.cpp",
-        "pybamm/solvers/c_solvers/idaklu/solution.cpp",
-        "pybamm/solvers/c_solvers/idaklu/solution.hpp",
-        "pybamm/solvers/c_solvers/idaklu/options.hpp",
-        "pybamm/solvers/c_solvers/idaklu/options.cpp",
-        "pybamm/solvers/c_solvers/idaklu.cpp",
+        "src/pybamm/solvers/c_solvers/idaklu/casadi_functions.cpp",
+        "src/pybamm/solvers/c_solvers/idaklu/casadi_functions.hpp",
+        "src/pybamm/solvers/c_solvers/idaklu/casadi_solver.cpp",
+        "src/pybamm/solvers/c_solvers/idaklu/casadi_solver.hpp",
+        "src/pybamm/solvers/c_solvers/idaklu/CasadiSolver.cpp",
+        "src/pybamm/solvers/c_solvers/idaklu/CasadiSolver.hpp",
+        "src/pybamm/solvers/c_solvers/idaklu/CasadiSolverOpenMP.cpp",
+        "src/pybamm/solvers/c_solvers/idaklu/CasadiSolverOpenMP.hpp",
+        "src/pybamm/solvers/c_solvers/idaklu/CasadiSolverOpenMP_solvers.cpp",
+        "src/pybamm/solvers/c_solvers/idaklu/CasadiSolverOpenMP_solvers.hpp",
+        "src/pybamm/solvers/c_solvers/idaklu/casadi_sundials_functions.cpp",
+        "src/pybamm/solvers/c_solvers/idaklu/casadi_sundials_functions.hpp",
+        "src/pybamm/solvers/c_solvers/idaklu/idaklu_jax.cpp",
+        "src/pybamm/solvers/c_solvers/idaklu/idaklu_jax.hpp",
+        "src/pybamm/solvers/c_solvers/idaklu/common.hpp",
+        "src/pybamm/solvers/c_solvers/idaklu/python.hpp",
+        "src/pybamm/solvers/c_solvers/idaklu/python.cpp",
+        "src/pybamm/solvers/c_solvers/idaklu/solution.cpp",
+        "src/pybamm/solvers/c_solvers/idaklu/solution.hpp",
+        "src/pybamm/solvers/c_solvers/idaklu/options.hpp",
+        "src/pybamm/solvers/c_solvers/idaklu/options.cpp",
+        "src/pybamm/solvers/c_solvers/idaklu.cpp",
     ],
 )
 ext_modules = [idaklu_ext] if compile_KLU() else []
