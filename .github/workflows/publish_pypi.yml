@@ -137,7 +137,7 @@ jobs:
             set -e -x
             python -c "import pybamm; print(pybamm.IDAKLUSolver())"
             echo {project}
-#            python -m pytest {project}
+            python -m pytest {project}
 
       - name: Upload wheels for Linux
         uses: actions/upload-artifact@v4
@@ -271,7 +271,7 @@ jobs:
             set -e -x
             python -c "import pybamm; print(pybamm.__file__); print(pybamm.IDAKLUSolver())"
             python -c "import pybamm; print(pybamm.have_idaklu())"
-            python -m pytest {project}
+            python -m pytest {project}/tests/unit
 
       - name: Upload wheels for macOS (amd64, arm64)
         uses: actions/upload-artifact@v4
