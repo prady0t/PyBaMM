@@ -31,7 +31,7 @@ jobs:
           pre-commit run -a
 
   run_unit_integration_and_coverage_tests:
-    needs: style
+#    needs: style
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
