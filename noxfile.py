@@ -173,6 +173,7 @@ def run_doctests(session):
     """Run the doctests and generate the output(s) in the docs/build/ directory."""
     # TODO: Temporary fix for Python 3.12 CI.
     # See: https://bitbucket.org/pybtex-devs/pybtex/issues/169/
+    set_environment_variables(PYBAMM_ENV, session=session)
     session.install("setuptools", silent=False)
     session.install("-e", ".[all,dev,docs]", silent=False)
     session.run(
@@ -180,7 +181,7 @@ def run_doctests(session):
         "-m",
         "pytest",
         "--doctest-plus",
-        "pybamm",
+        "src/pybamm",
     )
 
 
