@@ -87,6 +87,7 @@ jobs:
           CIBW_REPAIR_WHEEL_COMMAND: delvewheel repair -w {dest_dir} {wheel}
           CIBW_TEST_EXTRAS: "all,dev,jax"
           CIBW_TEST_COMMAND: |
+            ls
             python -c "import pybamm; print(pybamm.IDAKLUSolver())"
             python -m pytest {project}/tests/unit
       - name: Upload Windows wheels
@@ -122,6 +123,7 @@ jobs:
           CIBW_REPAIR_WHEEL_COMMAND_LINUX: auditwheel repair -w {dest_dir} {wheel}
           CIBW_TEST_EXTRAS: "all,dev,jax"
           CIBW_TEST_COMMAND: |
+            ls
             set -e -x
             python -c "import pybamm; print(pybamm.IDAKLUSolver())"
             python -m pytest {project}/tests/unit
@@ -255,6 +257,7 @@ jobs:
             fi
           CIBW_TEST_EXTRAS: "all,dev,jax"
           CIBW_TEST_COMMAND: |
+            ls
             set -e -x
             python -c "import pybamm; print(pybamm.have_idaklu())"
             python -m pytest {project}/tests/unit
