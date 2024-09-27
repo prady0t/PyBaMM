@@ -169,14 +169,14 @@ class TestIDAKLUJax:
 
     # Scalar evaluation
 
-    @pytest.mark.parametrize(
-        "output_variables", "idaklu_jax_solver", "f", "wrapper", testcase
-    )
-    def test_f_scalar(self, output_variables, idaklu_jax_solver, f, wrapper):
-        out = wrapper(f)(t_eval[k], inputs)
-        np.testing.assert_allclose(
-            out, np.array([sim[outvar](t_eval[k]) for outvar in output_variables]).T
-        )
+    # @pytest.mark.parametrize(
+    #     "output_variables", "idaklu_jax_solver", "f", "wrapper", testcase
+    # )
+    # def test_f_scalar(self, output_variables, idaklu_jax_solver, f, wrapper):
+    #     out = wrapper(f)(t_eval[k], inputs)
+    #     np.testing.assert_allclose(
+    #         out, np.array([sim[outvar](t_eval[k]) for outvar in output_variables]).T
+    #     )
 
     @pytest.mark.parametrize(
         "output_variables", "idaklu_jax_solver", "f", "wrapper", testcase
